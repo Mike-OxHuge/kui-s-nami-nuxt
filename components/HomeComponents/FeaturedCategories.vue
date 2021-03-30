@@ -17,7 +17,7 @@
 export default {
   computed: {
     categories() {
-      return this.$store.state.categories
+      return this.$store.state.catalog.categories.categories
     },
 
     featuredCategories() {

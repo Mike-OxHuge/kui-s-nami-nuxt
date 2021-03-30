@@ -9,19 +9,19 @@ export const state = () => ({
     {
       title: 'Contact 2',
       icon: 'mdi-account',
-      link: 'https://google.com',
+      link: 'https://yandex.ru',
       inFooter: true,
     },
     {
       title: 'Contact 3',
       icon: 'mdi-account-check',
-      link: 'https://google.com',
+      link: 'https://yahoo.com',
       inFooter: false,
     },
     {
       title: 'Contact 4',
       icon: 'favorite',
-      link: 'https://google.com',
+      link: 'https://mail.ru',
       inFooter: true,
     },
   ],

@@ -7,20 +7,14 @@
     </template>
     <v-list>
       <v-list-item v-for="(contact, i) in contacts" :key="i">
-        <v-btn text>
-          <v-icon left>
-            {{ contact.icon }}
-          </v-icon>
-          <span
-            ><a :href="contact.link">{{ contact.title }} </a></span
-          >
-        </v-btn>
-        <!-- <v-list-action>
-          <v-icon left> {{ contact.icon }} </v-icon>
-        </v-list-action>
-        <v-list-item-title>
-          {{ contact.title }}
-        </v-list-item-title> -->
+        <a :href="contact.link">
+          <v-btn text>
+            <v-icon left>
+              {{ contact.icon }}
+            </v-icon>
+            <span>{{ contact.title }} </span>
+          </v-btn>
+        </a>
       </v-list-item>
     </v-list>
   </v-menu>

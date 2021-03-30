@@ -14,7 +14,7 @@
 export default {
   computed: {
     subCategories() {
-      return this.$store.state.subCategories
+      return this.$store.state.catalog.subcategories.subCategories
     },
     featureds() {
       return this.subCategories.filter((category) => category.featured === true)

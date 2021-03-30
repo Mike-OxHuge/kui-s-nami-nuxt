@@ -78,7 +78,7 @@ iframe {
   width: inherit;
   height: 80vh;
 }
-a {
+/* a {
   text-decoration: none;
-}
+} */
 </style>
