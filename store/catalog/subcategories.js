@@ -26,9 +26,15 @@ export const state = () => ({
     },
     {
       name: 'Скамейки',
-      link: '/catalog/benches',
-      type: 'bothdoor',
+      link: '/catalog/outdoor/benches',
+      type: 'indoor',
       featured: true,
+    },
+    {
+      name: 'Скамейки',
+      link: '/catalog/indoor/benches',
+      type: 'outdoor',
+      featured: false,
     },
     {
       name: 'Мостики',
@@ -44,7 +50,7 @@ export const state = () => ({
     },
     {
       name: 'Навесы и козырьки',
-      link: '/canopy',
+      link: '/catalog/outdoor/canopy',
       type: 'outdoor',
       featured: true,
     },
@@ -92,8 +98,14 @@ export const state = () => ({
     },
     {
       name: 'Подставки под цветы',
-      link: '/catalog/flowerstands',
-      type: 'bothdoor',
+      link: '/catalog/outdoor/flowerstands',
+      type: 'indoor',
+      featured: true,
+    },
+    {
+      name: 'Подставки под цветы',
+      link: '/catalog/indoor/flowerstands',
+      type: 'outdoor',
       featured: true,
     },
     {
@@ -122,8 +134,14 @@ export const state = () => ({
     },
     {
       name: 'Перила',
-      link: '/catalog/railings',
-      type: 'bothdoor',
+      link: '/catalog/indoor/railings',
+      type: 'indoor',
+      featured: false,
+    },
+    {
+      name: 'Перила',
+      link: '/catalog/outdoor/railings',
+      type: 'outdoor',
       featured: true,
     },
 
@@ -148,9 +166,15 @@ export const state = () => ({
     },
     {
       name: 'Лестницы',
-      link: '/catalog/stairs',
-      type: 'bothdoor',
+      link: '/catalog/indoor/stairs',
+      type: 'indoor',
       featured: true,
+    },
+    {
+      name: 'Лестницы',
+      link: '/catalog/outdoor/stairs',
+      type: 'outdoor',
+      featured: false,
     },
     {
       name: 'Качели',
@@ -166,8 +190,14 @@ export const state = () => ({
     },
     {
       name: 'Столы',
-      link: '/catalog/tables',
-      type: 'bothdoor',
+      link: '/catalog/indoor/tables',
+      type: 'indoor',
+      featured: false,
+    },
+    {
+      name: 'Столы',
+      link: '/catalog/outdoor/tables',
+      type: 'outdoor',
       featured: true,
     },
     {

@@ -1,7 +1,7 @@
 <template>
   <v-sheet>
     <v-row>
-      <v-col v-for="category in featuredCategories" :key="category.i">
+      <v-col v-for="category in categories" :key="category.i">
         <v-card router :to="category.link">
           <v-img height="250" width="250" :src="category.img" />
           <v-card-title>
@@ -15,14 +15,20 @@
 
 <script>
 export default {
-  computed: {
-    categories() {
-      return this.$store.state.catalog.categories.categories
+  props: {
+    categories: {
+      type: Array,
+      required: true,
     },
+  },
 
-    featuredCategories() {
-      return this.categories.filter((category) => category.featured === true)
-    },
+  data() {
+    return {
+      //
+    }
+  },
+  computed: {
+    //
   },
 }
 </script>

@@ -21,7 +21,8 @@ export default {
   },
   data() {
     return {
-      pageNotFound: '404 Not Found',
+      pageNotFound:
+        '404 Страница не найдена. Её либо ещё нет, либо никогда и не будет, я хз куда ты там нажал.',
       otherError: 'An error occurred',
     }
   },
