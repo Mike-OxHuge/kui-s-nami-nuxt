@@ -1,7 +1,11 @@
 <template>
   <v-sheet>
     <div class="text-center">
+<<<<<<< HEAD
       <v-dialog v-model="dialog" max-width="500">
+=======
+      <v-dialog v-model="dialog" width="auto">
+>>>>>>> 55a876d44576ece1cadddf5f6fcf011879491c92
         <template #activator="{ on, attrs }">
           <v-row>
             <v-col v-for="item in items" :key="item.i">
@@ -16,11 +20,19 @@
           </v-row>
         </template>
         <v-card>
+<<<<<<< HEAD
           <IndividualItemView :items="items" />
           <v-card-actions>
             <v-spacer></v-spacer>
             <v-btn color="primary" text @click="dialog = false">
               Закрыть
+=======
+          <IndividualItemView />
+          <v-card-actions>
+            <v-spacer></v-spacer>
+            <v-btn color="primary" text @click="dialog = false">
+              I accept
+>>>>>>> 55a876d44576ece1cadddf5f6fcf011879491c92
             </v-btn>
           </v-card-actions>
         </v-card>
@@ -36,12 +48,20 @@ export default {
   props: {
     items: {
       type: Array,
+<<<<<<< HEAD
       default: () => [],
+=======
+      required: true,
+>>>>>>> 55a876d44576ece1cadddf5f6fcf011879491c92
     },
   },
   data() {
     return {
       dialog: false,
+<<<<<<< HEAD
+=======
+      diaogue: false,
+>>>>>>> 55a876d44576ece1cadddf5f6fcf011879491c92
     }
   },
 }

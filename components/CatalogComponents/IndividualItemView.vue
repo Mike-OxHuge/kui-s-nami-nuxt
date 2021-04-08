@@ -1,6 +1,10 @@
 <template>
   <v-sheet>
+<<<<<<< HEAD
     <v-card v-for="item in items" :key="item.i" flat>
+=======
+    <v-card v-for="item in items" :key="item.i">
+>>>>>>> 55a876d44576ece1cadddf5f6fcf011879491c92
       <v-card-title> {{ item.name }} </v-card-title>
 
       <expandable-image
@@ -17,9 +21,12 @@
 </template>
 
 <script>
+<<<<<<< HEAD
 import Vue from 'vue'
 import VueExpandableImage from 'vue-expandable-image'
 Vue.use(VueExpandableImage)
+=======
+>>>>>>> 55a876d44576ece1cadddf5f6fcf011879491c92
 export default {
   computed: {
     imported() {
