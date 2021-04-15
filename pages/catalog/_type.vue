@@ -1,27 +1,30 @@
 <template>
-  <div>
+  <v-sheet>
     <h1>API: subcategories</h1>
     <h2>'/catalog/_type.vue' here</h2>
 
     <p>Path: {{ $route.path }}</p>
     <p>route.params.type: {{ $route.params.type }}</p>
     <p>params.type: {{ params.type }}</p>
-    <div class="d-flex">
-      <v-row v-for="category in filteredCategories" :key="category.i">
-        <v-col cols="auto">
-          <NuxtLink :to="category.link">
-            <v-card>
-              <v-avatar tile size="100">
-                <img :src="category.img" alt="картинка для категории" />
-              </v-avatar>
 
-              <v-card-title>{{ category.name }}</v-card-title>
-            </v-card>
-          </NuxtLink>
-        </v-col>
-      </v-row>
-    </div>
-  </div>
+    <v-row>
+      <v-col
+        v-for="category in filteredCategories"
+        :key="category.i"
+        cols="auto"
+      >
+        <NuxtLink :to="category.link">
+          <v-card>
+            <v-avatar tile size="100">
+              <img :src="category.img" alt="картинка для категории" />
+            </v-avatar>
+
+            <v-card-title>{{ category.name }}</v-card-title>
+          </v-card>
+        </NuxtLink>
+      </v-col>
+    </v-row>
+  </v-sheet>
 </template>
 <script>
 export default {
@@ -32,6 +35,7 @@ export default {
 
     return { categories }
   },
+
   data() {
     return {
       params: this.$route.params,

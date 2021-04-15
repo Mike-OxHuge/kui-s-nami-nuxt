@@ -1,4 +1,5 @@
 <template>
+  <!-- this code is currently not displayed anywhere -->
   <v-main>
     <h1>API: items</h1>
     <h2>'/catalog/_subcategory/_individualitem/_view.vue' here</h2>
