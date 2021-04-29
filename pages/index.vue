@@ -1,8 +1,8 @@
 <template>
   <v-sheet>
-    <featured-categories :categories="featuredCategories" />
+    <featured-categories :featured-categories="featuredCategories" />
     <general-info />
-    <featured-subcategories />
+    <featured-subcategories :featured-sub-categories="featuredSubCategories" />
     <additional-info />
   </v-sheet>
 </template>
@@ -25,14 +25,24 @@ export default {
     const categories = await fetch(
       'https://next.json-generator.com/api/json/get/VJ5BPP0Nc'
     ).then((res) => res.json())
-    // return { categories }
 
-    const featuredCategories = categories.filter(
-      (category) => category.featured === true
-    )
-    if (featuredCategories) {
-      return { featuredCategories }
-    }
+    const subCategories = await fetch(
+      'https://next.json-generator.com/api/json/get/4JaUgvANc'
+    ).then((res) => res.json())
+
+    return { categories, subCategories }
+  },
+
+  data() {
+    return {}
+  },
+  computed: {
+    featuredCategories() {
+      return this.categories.filter((category) => category.featured === true)
+    },
+    featuredSubCategories() {
+      return this.subCategories.filter((category) => category.featured === true)
+    },
   },
 }
 </script>

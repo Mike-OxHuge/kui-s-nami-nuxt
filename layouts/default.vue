@@ -1,7 +1,20 @@
 <template>
   <v-app dark>
-    <v-navigation-drawer v-model="drawer" bottom :fixed="fixed" app>
+    <v-navigation-drawer
+      v-model="drawer"
+      temporary
+      :fixed="fixed"
+      app
+      :width="customWidth"
+    >
       <v-list>
+        <v-btn
+          v-if="$vuetify.breakpoint.smAndDown"
+          class="ma-5"
+          @click="refresh"
+        >
+          <v-icon>close</v-icon>
+        </v-btn>
         <v-list-item
           v-for="route in routes"
           :key="route.i"
@@ -46,6 +59,9 @@ export default {
   computed: {
     routes() {
       return this.$store.state.menu.routes
+    },
+    customWidth() {
+      return this.$vuetify.breakpoint.smAndDown ? '100vw' : '350'
     },
   },
   methods: {
