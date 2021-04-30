@@ -8,13 +8,17 @@
       :width="customWidth"
     >
       <v-list>
-        <v-btn
-          v-if="$vuetify.breakpoint.smAndDown"
-          class="ma-5"
-          @click="refresh"
-        >
-          <v-icon>close</v-icon>
-        </v-btn>
+        <div class="d-flex justify-end">
+          <v-btn
+            v-if="$vuetify.breakpoint.smAndDown"
+            text
+            class="ma-5"
+            @click="refresh"
+          >
+            <v-icon right>close</v-icon>
+          </v-btn>
+        </div>
+
         <v-list-item
           v-for="route in routes"
           :key="route.i"
