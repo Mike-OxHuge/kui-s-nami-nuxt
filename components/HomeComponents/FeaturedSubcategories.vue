@@ -1,22 +1,26 @@
 <template>
-  <v-container>
-    <v-row>
+  <v-container class="">
+    <v-row justify-center>
       <v-col
         v-for="category in featuredSubCategories"
         :key="category.i"
         cols="auto"
+        class=""
       >
         <NuxtLink :to="category.link">
-          <v-card class="mx-auto" flat>
+          <div class="d-flex flex-column align-center">
             <v-avatar size="100">
               <v-img :src="category.img" alt="featured sub category image" />
             </v-avatar>
-            <v-card-text class="text-center">
+            <v-btn text>
               <span class="fire--text">
                 {{ category.name }}
               </span>
-            </v-card-text>
-          </v-card>
+            </v-btn>
+            <span class="fire--text">
+              {{ category.name }}
+            </span>
+          </div>
         </NuxtLink>
       </v-col>
     </v-row>

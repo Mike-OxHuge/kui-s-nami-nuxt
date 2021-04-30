@@ -1,20 +1,27 @@
 <template>
-  <v-main>
-    <v-row class="mt-n5" dense>
-      <v-col v-for="category in categories" :key="category.i" cols="auto">
+  <v-container class="">
+    <v-row justify="center" dense>
+      <v-col
+        v-for="category in categories"
+        :key="category.i"
+        cols="auto"
+        class="align-center"
+      >
         <NuxtLink :to="`${category.link}`">
           <v-card>
-            <v-img height="250" width="250" :src="category.img" />
-            <v-card-title>
-              <span>
-                {{ category.name }}
-              </span>
-            </v-card-title>
+            <div class="d-flex flex-column align-center">
+              <v-img height="250" width="250" :src="category.img" />
+              <v-card-title>
+                <span class="fire--text">
+                  {{ category.name }}
+                </span>
+              </v-card-title>
+            </div>
           </v-card>
         </NuxtLink>
       </v-col>
     </v-row>
-  </v-main>
+  </v-container>
 </template>
 
 <script>
