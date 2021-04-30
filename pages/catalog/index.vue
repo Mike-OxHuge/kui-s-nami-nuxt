@@ -1,5 +1,5 @@
 <template>
-  <v-container class="">
+  <v-container class="main-wrap">
     <v-row justify="center" dense>
       <v-col
         v-for="category in categories"
@@ -41,4 +41,8 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+.main-wrap {
+  width: 100vw;
+}
+</style>

@@ -32,7 +32,7 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-app-bar :fixed="fixed" app flat>
+    <v-app-bar :fixed="fixed" app flat max-width="100vw">
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <v-spacer />
       <NuxtLink to="/">LOGO</NuxtLink>

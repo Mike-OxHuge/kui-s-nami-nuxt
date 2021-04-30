@@ -1,5 +1,5 @@
 <template>
-  <v-sheet>
+  <v-main>
     <div class="text-center ma-auto">
       <h1>Общая Информация</h1>
     </div>
@@ -7,7 +7,7 @@
       <div />
       <div />
 
-      <v-row justify="space-around">
+      <v-row justify="space-around" style="max-width: 100vw">
         <v-col cols="auto">
           <v-btn color="warning">
             <a target="_blank" href="https://forms.gle/xDqnpQ6sGZiTEERy7">
@@ -62,7 +62,7 @@
       </v-row>
     </div>
     <hr />
-  </v-sheet>
+  </v-main>
 </template>
 
 <script>
