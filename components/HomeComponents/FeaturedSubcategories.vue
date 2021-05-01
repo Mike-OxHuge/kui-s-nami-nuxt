@@ -1,7 +1,10 @@
 <template>
   <v-main class="pt-2">
     <!-- small screens -->
-    <v-slide-group v-if="$vuetify.breakpoint.mdAndDown">
+    <v-slide-group
+      v-if="$vuetify.breakpoint.mdAndDown"
+      :show-arrows="showArrows"
+    >
       <v-slide-item v-for="category in firstHalf" :key="category.i">
         <NuxtLink :to="category.link">
           <div
@@ -21,7 +24,10 @@
       </v-slide-item>
     </v-slide-group>
 
-    <v-slide-group v-if="$vuetify.breakpoint.mdAndDown">
+    <v-slide-group
+      v-if="$vuetify.breakpoint.mdAndDown"
+      :show-arrows="showArrows"
+    >
       <v-slide-item v-for="category in secondHalf" :key="category.i">
         <NuxtLink :to="category.link">
           <div
@@ -86,6 +92,9 @@ export default {
   computed: {
     customWidth() {
       return this.$vuetify.breakpoint.smAndDown ? 'width: 40vw' : 'width: 10vw'
+    },
+    showArrows() {
+      return this.$vuetify.breakpoint.smAndDown ? 'false' : ''
     },
     //
   },
