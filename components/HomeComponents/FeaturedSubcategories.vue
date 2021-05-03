@@ -1,5 +1,5 @@
 <template>
-  <v-main class="pt-2">
+  <v-main class="pt-4">
     <!-- small screens -->
     <!-- <v-slide-group
       v-if="$vuetify.breakpoint.mdAndDown"
@@ -87,11 +87,9 @@
                       alt="featured sub category image"
                     />
                   </v-avatar>
-                  <v-btn text>
-                    <span class="fire--text">
-                      {{ category.name }}
-                    </span>
-                  </v-btn>
+                  <p class="fire--text text-center">
+                    {{ category.name }}
+                  </p>
                 </div>
               </NuxtLink>
             </v-col>
@@ -114,9 +112,9 @@
                       alt="featured sub category image"
                     />
                   </v-avatar>
-                  <v-btn text class="fire--text">
+                  <p class="fire--text text-center">
                     {{ category.name }}
-                  </v-btn>
+                  </p>
                 </div>
               </NuxtLink>
             </v-col>
@@ -139,11 +137,9 @@
                       alt="featured sub category image"
                     />
                   </v-avatar>
-                  <v-btn text>
-                    <span class="fire--text">
-                      {{ category.name }}
-                    </span>
-                  </v-btn>
+                  <p class="fire--text text-center">
+                    {{ category.name }}
+                  </p>
                 </div>
               </NuxtLink>
             </v-col>
@@ -172,7 +168,10 @@ export default {
 
   computed: {
     customWidth() {
-      return this.$vuetify.breakpoint.smAndDown ? 'width: 15vw;' : 'width: 10vw'
+      // this is really bad
+      return this.$vuetify.breakpoint.smAndDown
+        ? 'width: 15vw; height:20vh;'
+        : 'width: 10vw; height:30vh;'
     },
     showArrows() {
       return !this.$vuetify.breakpoint.smAndDown
@@ -210,7 +209,8 @@ export default {
 </script>
 
 <style scoped>
-span {
+p {
   font-weight: bolder !important;
+  text-transform: uppercase;
 }
 </style>

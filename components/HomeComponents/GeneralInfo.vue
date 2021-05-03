@@ -61,7 +61,6 @@
         </v-col>
       </v-row>
     </div>
-    <hr />
   </v-main>
 </template>
 
