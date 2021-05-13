@@ -1,41 +1,44 @@
 <template>
-  <v-main class="d-flex flex-column align-center py-2">
-    <v-slide-group show-arrows="">
-      <v-slide-item v-for="category in featuredCategories" :key="category.i">
+  <v-main class="d-flex flex-column py-2">
+    <v-row v-if="$vuetify.breakpoint.mdAndUp">
+      <v-col v-for="category in featuredCategories" :key="category.i" cols="4">
         <v-card router :to="category.link" flat class="ma-3">
-          <!-- <div class="d-flex flex-column align-center"> -->
           <v-avatar tile size="250">
             <v-img :src="category.img" />
           </v-avatar>
-
           <v-card-text class="fire--text" style="overflow-wrap: break-word">
             {{ category.name }}
           </v-card-text>
-          <!-- </div> -->
-        </v-card>
-      </v-slide-item>
-    </v-slide-group>
-
-    <!-- <v-row no-gutters>
-      <v-col
-        v-for="category in featuredCategories"
-        :key="category.i"
-        cols="12"
-        sm="4"
-      >
-        <v-card router :to="category.link" flat>
-          <div class="d-flex flex-column align-center">
-            <v-avatar size="100">
-              <v-img :src="category.img" />
-            </v-avatar>
-
-            <v-card-title class="fire--text" style="overflow-wrap: break-word">
-              {{ category.name }}
-            </v-card-title>
-          </div>
         </v-card>
       </v-col>
-    </v-row> -->
+    </v-row>
+    <div v-if="$vuetify.breakpoint.smAndDown">
+      <v-carousel continuous cycle>
+        <v-carousel-item
+          v-for="category in featuredCategories"
+          :key="category.i"
+        >
+          <v-sheet router :to="category.link">
+            <v-img :src="category.img" contain />
+            <div
+              style="
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                text-align: center;
+                width: 100vw;
+                background-color: rgba(0, 0, 0, 0.55);
+                padding: 5% 0px;
+              "
+            >
+              <p class="fire--text mb-0">
+                {{ category.name }}
+              </p>
+            </div>
+          </v-sheet>
+        </v-carousel-item>
+      </v-carousel>
+    </div>
   </v-main>
 </template>
 
@@ -62,4 +65,9 @@ export default {
 }
 </script>
 
-<style></style>
+<style scoped>
+p {
+  font-weight: bolder !important;
+  text-transform: uppercase;
+}
+</style>

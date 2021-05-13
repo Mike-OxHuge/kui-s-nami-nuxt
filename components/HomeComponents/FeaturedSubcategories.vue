@@ -1,79 +1,8 @@
 <template>
   <v-main class="pt-4">
-    <!-- small screens -->
-    <!-- <v-slide-group
-      v-if="$vuetify.breakpoint.mdAndDown"
-      :show-arrows="showArrows"
-    >
-      <v-slide-item v-for="category in firstHalf" :key="category.i">
-        <NuxtLink :to="category.link">
-          <div
-            class="d-flex flex-column align-center mx-3"
-            :style="customWidth"
-          >
-            <v-avatar size="100">
-              <v-img :src="category.img" alt="featured sub category image" />
-            </v-avatar>
-            <v-btn text>
-              <span class="fire--text">
-                {{ category.name }}
-              </span>
-            </v-btn>
-          </div>
-        </NuxtLink>
-      </v-slide-item>
-    </v-slide-group> -->
-
-    <!-- <v-slide-group
-      v-if="$vuetify.breakpoint.mdAndDown"
-      :show-arrows="showArrows"
-    >
-      <v-slide-item v-for="category in secondHalf" :key="category.i">
-        <NuxtLink :to="category.link">
-          <div
-            class="d-flex flex-column align-center mx-3"
-            :style="customWidth"
-          >
-            <v-avatar size="100">
-              <v-img :src="category.img" alt="featured sub category image" />
-            </v-avatar>
-            <v-btn text>
-              <span class="fire--text">
-                {{ category.name }}
-              </span>
-            </v-btn>
-          </div>
-        </NuxtLink>
-      </v-slide-item>
-    </v-slide-group> -->
-
-    <!-- large screens -->
-    <!-- <v-row v-if="$vuetify.breakpoint.lgAndUp">
-      <v-col
-        v-for="category in featuredSubCategories"
-        :key="category.i"
-        cols="auto"
-        lg="2"
-        xl="1"
-        class=""
-      >
-        <NuxtLink :to="category.link">
-          <div class="d-flex flex-column align-center">
-            <v-avatar size="150">
-              <v-img :src="category.img" alt="featured sub category image" />
-            </v-avatar>
-            <v-btn text>
-              <span class="fire--text">
-                {{ category.name }}
-              </span>
-            </v-btn>
-          </div>
-        </NuxtLink>
-      </v-col>
-    </v-row> -->
-    <v-carousel hide-delimiters :show-arrows="showArrows">
+    <v-carousel hide-delimiters :show-arrows="showArrows" height="100vh">
       <v-carousel-item>
-        <v-sheet height="100%" tile>
+        <v-sheet height="" tile>
           <v-row class="fill-height" align="center" justify="center">
             <v-col v-for="category in firstHalf" :key="category.i" cols="auto">
               <NuxtLink :to="category.link">
@@ -167,12 +96,12 @@ export default {
   },
 
   computed: {
-    customWidth() {
-      // this is really bad
-      return this.$vuetify.breakpoint.smAndDown
-        ? 'width: 15vw; height:20vh;'
-        : 'width: 10vw; height:30vh;'
-    },
+    // this is really bad
+    // customWidth() {
+    //   return this.$vuetify.breakpoint.smAndDown
+    //     ? 'width: 15vw; height:20vh;'
+    //     : 'width: 10vw; height:30vh;'
+    // },
     showArrows() {
       return !this.$vuetify.breakpoint.smAndDown
     },
@@ -210,7 +139,7 @@ export default {
 
 <style scoped>
 p {
-  font-weight: bolder !important;
+  font-weight: 500 !important;
   text-transform: uppercase;
 }
 </style>
