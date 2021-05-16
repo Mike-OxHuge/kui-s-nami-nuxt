@@ -3,11 +3,15 @@
     <v-col v-for="category in splittedArray" :key="category.i" cols="auto">
       <div class="d-flex flex-column align-center">
         <v-avatar :size="customSize">
-          <v-img :src="category.img" alt="featured sub category image" />
+          <NuxtLink :to="category.link">
+            <v-img :src="category.img" alt="featured sub category image" />
+          </NuxtLink>
         </v-avatar>
-        <p class="fire--text text-center">
-          {{ category.name }}
-        </p>
+        <NuxtLink :to="category.link">
+          <p class="fire--text text-center">
+            {{ category.name }}
+          </p>
+        </NuxtLink>
       </div>
     </v-col>
   </v-row>

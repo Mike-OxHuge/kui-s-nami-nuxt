@@ -1,7 +1,12 @@
 <template>
   <v-main class="d-flex flex-column py-2">
     <v-row v-if="$vuetify.breakpoint.mdAndUp">
-      <v-col v-for="category in featuredCategories" :key="category.i" cols="4">
+      <v-col
+        v-for="category in featuredCategories"
+        :key="category.i"
+        cols="4"
+        style="display: flex; justify-content: center"
+      >
         <v-card router :to="category.link" flat class="ma-3">
           <v-avatar tile size="250">
             <v-img :src="category.img" />

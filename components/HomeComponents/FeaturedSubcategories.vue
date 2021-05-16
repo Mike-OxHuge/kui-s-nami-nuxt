@@ -1,6 +1,6 @@
 <template>
   <v-main class="pt-4">
-    <v-carousel hide-delimiters :show-arrows="showArrows" height="100vh">
+    <v-carousel hide-delimiters>
       <v-carousel-item>
         <carousel-item :splitted-array="firstHalf" />
       </v-carousel-item>
