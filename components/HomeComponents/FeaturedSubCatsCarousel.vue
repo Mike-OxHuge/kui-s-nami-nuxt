@@ -1,6 +1,12 @@
 <template>
   <v-row class="fill-height" align="center" justify="center">
-    <v-col v-for="category in splittedArray" :key="category.i" cols="auto">
+    <v-col
+      v-for="category in splittedArray"
+      :key="category.i"
+      cols="3"
+      md="2"
+      class="mx-2"
+    >
       <div class="d-flex flex-column align-center">
         <v-avatar :size="customSize">
           <NuxtLink :to="category.link">
