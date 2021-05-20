@@ -1,16 +1,8 @@
 <template>
   <v-main class="pt-4">
     <v-carousel hide-delimiters>
-      <v-carousel-item>
-        <carousel-item :splitted-array="firstHalf" />
-      </v-carousel-item>
-
-      <v-carousel-item>
-        <carousel-item :splitted-array="secondHalf" />
-      </v-carousel-item>
-
-      <v-carousel-item>
-        <carousel-item :splitted-array="thirdHalf" />
+      <v-carousel-item v-for="array in sliced" :key="array.i">
+        <carousel-item :splitted-array="array" />
       </v-carousel-item>
     </v-carousel>
   </v-main>
@@ -30,9 +22,7 @@ export default {
   },
   data() {
     return {
-      firstHalf: [],
-      secondHalf: [],
-      thirdHalf: [],
+      sliced: [],
     }
   },
 
@@ -44,22 +34,21 @@ export default {
   },
 
   beforeMount() {
-    const x = this.featuredSubCategories.length / 3
-    const a = this.featuredSubCategories.slice()
-    const b = a.splice(0, x)
-    const n = a.length / 2
-    const c = a.splice(0, n)
-
-    for (let i = 0; i < a.length; i++) {
-      this.firstHalf.push(a[i])
-    }
-    for (let i = 0; i < b.length; i++) {
-      this.secondHalf.push(b[i])
-    }
-    for (let i = 0; i < c.length; i++) {
-      this.thirdHalf.push(c[i])
-    }
+    const total = this.featuredSubCategories.length
+    const items = [
+      this.featuredSubCategories.slice(0, Math.ceil(total / 3)),
+      this.featuredSubCategories.slice(
+        Math.ceil(total / 3),
+        Math.ceil(total / 3) * 2
+      ),
+      this.featuredSubCategories.slice(
+        Math.ceil(total / 3) * 2,
+        Math.ceil(total + 1)
+      ),
+    ]
+    this.sliced = items
   },
+
   mounted() {
     //
   },
