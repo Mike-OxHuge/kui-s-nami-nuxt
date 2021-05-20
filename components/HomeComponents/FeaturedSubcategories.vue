@@ -56,6 +56,12 @@ export default {
     //
   },
 }
+// In case you will need a working solution for every case in the future
+// const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+
+// let result = [];
+
+// arr.forEach((n, i) => !result[i % 3] ? result.push([n]) : result[i % 3].push(n));
 </script>
 
 <style scoped>
