@@ -33,7 +33,7 @@ export default {
   },
   computed: {
     customSize() {
-      return this.$vuetify.breakpoint.smAndDown ? '60' : '200'
+      return this.$vuetify.breakpoint.smAndDown ? '50' : '200'
     },
   },
 }
