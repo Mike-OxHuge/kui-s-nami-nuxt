@@ -21,27 +21,36 @@ export default {
     FeaturedSubcategories,
     AdditionalInfo,
   },
-  async asyncData() {
-    const categories = await fetch(
-      'https://next.json-generator.com/api/json/get/VJ5BPP0Nc'
-    ).then((res) => res.json())
 
-    const subCategories = await fetch(
-      'https://next.json-generator.com/api/json/get/4JaUgvANc'
-    ).then((res) => res.json())
+  // fetch is broken, currently using hardcoded backed-up data.
 
-    return { categories, subCategories }
-  },
+  // async asyncData() {
+  //   const categories = await fetch(
+  //     'https://api.json-generator.com/templates/UGGVwCTMQ6eR/data'
+  //   ).then((res) => res.json())
+
+  //   const subCategories = await fetch(
+  //     'https://api.json-generator.com/templates/afT9Y8k2Rccb/data'
+  //   ).then((res) => res.json())
+
+  //   return { categories, subCategories }
+  // },
 
   data() {
-    return {}
+    return {
+      //
+    }
   },
   computed: {
     featuredCategories() {
-      return this.categories.filter((category) => category.featured === true)
+      return this.$store.state.catalog.categories.categories.filter(
+        (category) => category.featured === true
+      )
     },
     featuredSubCategories() {
-      return this.subCategories.filter((category) => category.featured === true)
+      return this.$store.state.catalog.subcategories.subCategories.filter(
+        (category) => category.featured === true
+      )
     },
   },
 }
