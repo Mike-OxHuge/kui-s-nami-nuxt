@@ -26,17 +26,25 @@
 
 <script>
 export default {
-  async asyncData() {
-    const categories = await fetch(
-      'https://next.json-generator.com/api/json/get/VJ5BPP0Nc'
-    ).then((res) => res.json())
+  // async asyncData() {
+  //   const categories = await fetch(
+  //     'https://next.json-generator.com/api/json/get/VJ5BPP0Nc'
+  //   ).then((res) => res.json())
 
-    return { categories }
-  },
+  //   return { categories }
+  // },
   data() {
     return {
       //
     }
+  },
+  computed: {
+    categories() {
+      return this.$store.state.catalog.categories.categories
+    },
+  },
+  mounted() {
+    // console.log(this.$store.state.catalog.categories.categories)
   },
 }
 </script>
